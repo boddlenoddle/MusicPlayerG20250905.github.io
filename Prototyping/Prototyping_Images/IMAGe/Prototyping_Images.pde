@@ -24,14 +24,17 @@ String fileExtensionJPG = ".jpg";
 String imagePathway1 = upArrow + folder + duck + fileExtensionJPG; 
 //println("Duck Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
-PImage image1 = loadImage(ImagePathway1 );
+PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 6000; //Hardcoded
 int imageHeight1 = 4000; //Hardcoded
 //Aspect Ratio
-float imageAspectRatio_GreaterOne = (imageWidth1 >= imageHight) ? float(imageWidth1)/float(imageHeight1) : float(imageHeeight)/float(imageWidth) ; //Ternary Operator
+float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
 //Hardcoded Greater-Than-One Aspect Ratio
 println (image1AspectRatio_GreaterOne);
 //DIV
-rect(imageDivX, ImageDivY, imageWidth, imageHeight );
+rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
-image( image1, imageDivX, ImageDivY, imageWidth, imageHeight  );
+//image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+image( image1, imageDivX, imageDivY, imageWidthAdjusted1, imageHeightAdjusted1 );
+//
+//End Program
