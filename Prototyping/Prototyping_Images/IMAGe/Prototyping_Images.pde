@@ -31,26 +31,6 @@ int imageHeight1 = 4000; //Hardcoded
 float imageAspectRatio_GreaterOne = (imageWidth1 >= imageHight) ? float(imageWidth1)/float(imageHeight1) : float(imageHeeight)/float(imageWidth) ; //Ternary Operator
 //Hardcoded Greater-Than-One Aspect Ratio
 println (image1AspectRatio_GreaterOne);
-//ERROR, int populating float: truncating-adding zeros, casting
-/* Line Notes
-- Hardcoded Greater-Than-One Aspect Ratio, x or / >1 or <1
-- 2D information from Image, Apsect Ratio Number
-- Answers how to make image bigger or smaller
-- Computer calculated DIV width & height
-- Computer needs to compare image to DIV size difference
-*/
-//println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
-//println("After casting added, Aspect Ratio >1:", image1AspectRatio_GreaterOne);
-//Algorithm Decisions (choice)
-float imageWidthAdjusted1 = imageDivWidth;
-float imageHeightAdjusted1 = ( imageWidth1 >= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
-//Verification: looks good
-if ( imageHeightAdjusted1 > imageDivHeight ) {
-  println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image doesn't show.");
-  exit();
-  //
-}
-//
 //DIV
 rect(imageDivX, ImageDivY, imageWidth, imageHeight );
 //
