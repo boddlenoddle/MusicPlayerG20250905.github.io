@@ -2,17 +2,17 @@
  */
 //Display
 fullScreen(); //Landscape
-//size(500, 250); //Portrait, testing smaller DIVs ONLY
+//size(6000, 4000); //Portrait, testing smaller DIVs ONLY
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
 //println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
 //println("\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "\tdisplayHeight:\t"+displayHeight, "\n\t\t\t\tSize\t, width:\t\t"+width, "\theight:\t\t"+height);
 //
 //Population
-float imageDivX = appWidth*1/4; //**Akward DIV
-float imageDivY = appHeight*1/10;
-float imageDivWidth = appWidth*1/2;
-float imageDivHeight = appHeight*4/5;
+float imageDivX = appWidth*1/16; //**Akward DIV
+float imageDivY = appHeight*1/16;
+float imageDivWidth = appWidth*1/3;
+float imageDivHeight = appHeight*1/1.5;
 //
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
