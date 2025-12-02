@@ -1,4 +1,4 @@
-/* Aspect Ratio: Bike Only Demonstration
+/* Aspect Ratio: Duck Only Demonstration
  - Old Man using arrays
  - introduction: set index manually
  */
