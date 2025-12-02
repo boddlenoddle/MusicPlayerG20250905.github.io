@@ -1,4 +1,4 @@
-/* Aspect Ratio: Bike Image Demonstration , Circles
+/* Aspect Ratio: Duck Image Demonstration , Circles
  */
 //Display
 fullScreen(); //Landscape
