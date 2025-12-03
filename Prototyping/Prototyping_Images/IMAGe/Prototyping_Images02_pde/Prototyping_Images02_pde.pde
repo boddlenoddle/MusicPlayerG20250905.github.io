@@ -2,6 +2,7 @@
  - NullPointerException on the Image-Variable
  */
 //
+//
 //Display
 //fullScreen(); //Landscape
 size(6000, 4000); //Portrait, testing smaller DIVs ONLY
@@ -38,8 +39,8 @@ if ( image1 == null ) {
 }
 //Demonstrates alternate way to load an image without a pathway
 //
-int imageWidth1 = 860; //Hardcoded
-int imageHeight1 = 529; //Hardcoded
+int imageWidth1 = 6000; //Hardcoded
+int imageHeight1 = 4000; //Hardcoded
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
 //ERROR, int populating float: truncating-adding zeros, casting
