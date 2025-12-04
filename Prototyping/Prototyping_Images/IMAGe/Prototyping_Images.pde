@@ -23,6 +23,7 @@ String fileExtensionJPG = ".jpg";
 String imagePathway1 = upArrow + folder + Duck + fileExtensionJPG;
 //println("Duck Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
+//
 PImage image1 = loadImage( imagePathway1 ); //Error: pathway mispelled
 int imageWidth1 = 6000; //Hardcoded, see Image / Properties / Details / Width & Height
 int imageHeight1 = 4000; //Hardcoded
