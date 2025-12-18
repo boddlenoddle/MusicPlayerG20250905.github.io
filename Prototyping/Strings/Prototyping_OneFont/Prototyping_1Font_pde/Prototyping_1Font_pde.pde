@@ -1,5 +1,5 @@
 /* String - Calculating Aspect Ratio for First Font
- Harrington
+ Georgia-Italic-48
  */
 //
 //Display
@@ -39,24 +39,24 @@ String title = "Wahoo! Rodeo!!"; //Smaller than divWidth
 float fontSize = appHeight; //Entire Program, Algorithm to have smallest font size
 //Note: although int changes to float in assignment and intialization, difficult for lower math-levels due to memorization
 PFont titleFont; //Font Varaible Name, able to have more than one Font
-String Dauphin = "Dauphin"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+String GeorgiaItalic = "GeorgiaItalic"; //Spelling of the Font Matters, see PFont.list() v Create Font above
 //Reminder: only letters ending with numbers, underscore means camelCase or snake_case
 //Mispelling will cuase a very odd error
-titleFont = createFont(Dauphin, fontSize);
+titleFont = createFont(GeorgiaItalic48, fontSize);
 //
 //println("Font Size:", fontSize, "\tFont Spelling:", Dauphin, "\tFont Variable Confirmation:", titleFont); //Inspect PFont-type Varaible for Harddrive Address v value
 //
-/*Aspect Ratio for Dauphin
+/*Aspect Ratio for GeorgiaItalic
  - choose Aspect Ratio that must be mutliplied (<1): fontSize/titleHeight
  - Rewriting fontSize with formulae
  */
 //** Aspect Ratio records manual changes of declaration-initiation
-float fontSizeDauphin = 83.0; //fontSize=129 before initializing with appHeight, Change the number until it fits, largest font size
-float divHeightDauphin = stringDivHeight; //Key:Value, value=120
+float fontSizeGeorgiaItalic48 = 83.0; //fontSize=129 before initializing with appHeight, Change the number until it fits, largest font size
+float divHeightGeorgiaItalic48 = stringDivHeight; //Key:Value, value=120
 println("Reference DIV Height for Aspect Ratio:", stringDivHeight);
-float DauphinAspectRatio = fontSizeDauphin / divHeightDauphin;
-fontSize = stringDivHeight*DauphinAspectRatio; //when testing, use fontSizeDauphin, then calculation
-//println("Dauphin Aspect Ratio:", DauphinAspectRatio, "@ Font Size:", fontSize);
+float GeorgiaItalic48AspectRatio = fontSizeGeorgiaItalic48 / divHeightGeorgiaItalic48;
+fontSize = stringDivHeight*GeorgiaItalic48AspectRatio; //when testing, use fontSizeDauphin, then calculation
+//println("GeorgiaItalic48 Aspect Ratio:",GeorgiaItalic48AspectRatio, "@ Font Size:", fontSize);
 //
 rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight ); //We see shape, computer sees variables
 //
