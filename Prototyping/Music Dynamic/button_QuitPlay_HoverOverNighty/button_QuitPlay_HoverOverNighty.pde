@@ -1,10 +1,11 @@
-/* Creating Buttons - HoverOver in draw()
+/* Creating Buttons - HoverOver in draw() with NightMode and Simple Text
  - draw() updates mouseX&Y 60x per second
  - CANVAS will repeat all code
  - effect is rect() are layered like a flip book 60x per second
  - creates change
  
  - Code explored: If-Else
+ - Ultra simple text algorithm not fit for mutliple displays
  
  - Next
  - Play Button Function including println()
@@ -22,18 +23,17 @@ float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
 float playDivX, playDivY, playDivWidth, playDivHeight;
 float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
 //
-Boolean playButton=false, quitButton=false;
+Boolean playButton=false;
 //
 color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
 color quitButtonInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
-Boolean nightMode=false;
+Boolean nightMode;
 //
 void setup() {
   //Display
   size(500, 400);
-  //fullScreen();
   appWidth = width;
   appHeight = height;
   //
@@ -69,11 +69,11 @@ void setup() {
   resetInkDay = black;
   resetBackgroundNight = 256/4;
   resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
-  //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
+  println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
   //Button Colours: layering local variables leads to preferences controled by Booleans
-  color red = #FF0000;
-  color purple = #9D03FF; //human name for hexidecimal code
-  color yellow = #FFFF00;
+  color red = #CB255F;
+  color purple = #CF82DB; //human name for hexidecimal code
+  color yellow = #F5EA8A;
   color darkGray = grayScale;
   color ligthGray = gray;
   //Note: able to use a Ternary Operator but ineffiecient
@@ -144,12 +144,6 @@ void draw() {
 } //End draw
 //
 void mousePressed() {
-  //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
-    noLoop(); //Adjusts the exit of the program using finishing draw()
-    exit(); //With noLoop(), exit happens here
-    println("Final Line of mousePressed and finishes draw()");
-  }
   //Music Play Functions
   if ( playButton == true ) {
     println("Play My Song");

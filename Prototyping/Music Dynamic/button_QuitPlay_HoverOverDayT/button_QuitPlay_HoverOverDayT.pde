@@ -4,8 +4,6 @@
  - effect is rect() are layered like a flip book 60x per second
  - creates change
  
- - Code explored: If-Else
- 
  - Next
  - Play Button Function including println()
  - Quit Button Function including noLoop() & exit()
@@ -22,13 +20,11 @@ float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
 float playDivX, playDivY, playDivWidth, playDivHeight;
 float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
 //
-Boolean playButton=false, quitButton=false;
+Boolean playButton=false;
 //
-color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
-color quitButtonInk;
+color resetBackground, resetInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
-Boolean nightMode=false;
 //
 void setup() {
   //Display
@@ -59,48 +55,24 @@ void setup() {
   triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
   //
   //Colour Population
-  nightMode=false;
   color black = 0; //Gray Scale, much smaller color, 256 bits
   color white = 255; //Gray Scale
-  color grayScale = 256/2; //Example Gray Scale, small memory
-  color gray = #B9B9B9; //Example Gray Scale, large memory
   //CANVAS: default background and ink
-  resetBackgroundDay = white;
-  resetInkDay = black;
-  resetBackgroundNight = 256/4;
-  resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
-  //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
-  //Button Colours: layering local variables leads to preferences controled by Booleans
-  color red = #FF0000;
-  color purple = #9D03FF; //human name for hexidecimal code
-  color yellow = #FFFF00;
-  color darkGray = grayScale;
-  color ligthGray = gray;
-  //Note: able to use a Ternary Operator but ineffiecient
-  if ( nightMode == true ) {
-    resetBackground = resetBackgroundNight;
-    resetInk = resetInkNight;
-    playColourBackground = darkGray;
-    playColourSymbol = ligthGray;
-    playColourBackgroundActivated = ligthGray;
-    playColourSymbolActivated = darkGray;
-    quitBackground = ligthGray;
-    quitBackgroundActivated = red;
-    quitButtonInk = darkGray;
-  } else
-  {
-    //Previously the Day Colour Assignments
-    resetBackground = resetBackgroundDay;
-    resetInk = black;
-    playColourBackground = purple;
-    playColourSymbol = yellow;
-    playColourBackgroundActivated = yellow;
-    playColourSymbolActivated = purple;
-    quitBackground = white;
-    quitBackgroundActivated = red;
-    quitButtonInk = black;
-  } //End Night Mode Colors
-  //
+  resetBackground = white;
+  resetInk = black;
+  //Button Colours
+  color red = #CB255F;
+  color purple = #CF82DB; //human name for hexidecimal code
+  color yellow = #F5EA8A;
+  color grayScale = 359/1; //Example Gray Scale, small memory
+  color gray = #9B9999; //Example Gray Scale, large memory
+  playColourBackground = purple;
+  playColourSymbol = yellow;
+  playColourBackgroundActivated = yellow;
+  playColourSymbolActivated = purple;
+  quitBackground = white;
+  quitBackgroundActivated = red;
+    //
 } //End setup
 //
 void draw() {
@@ -127,29 +99,15 @@ void draw() {
     fill(quitBackgroundActivated);
     rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
     fill(resetBackground);
-    fill(quitButtonInk);
-    //Note: rect() starts top-right corner, text() starts bottom-right corner
-   text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5); //adjust fractions or decimals until working
-    fill(resetInk);
   } else {
     fill(quitBackground);
     rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
     fill(resetBackground);
-    fill(quitButtonInk);
-    //Note: rect() starts top-right corner, text() starts bottom-right corner
-    text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5); //adjust fractions or decimals until working
-    fill(resetInk);
   }//End Quit Button Hover Over
   //
 } //End draw
 //
 void mousePressed() {
-  //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
-    noLoop(); //Adjusts the exit of the program using finishing draw()
-    exit(); //With noLoop(), exit happens here
-    println("Final Line of mousePressed and finishes draw()");
-  }
   //Music Play Functions
   if ( playButton == true ) {
     println("Play My Song");
