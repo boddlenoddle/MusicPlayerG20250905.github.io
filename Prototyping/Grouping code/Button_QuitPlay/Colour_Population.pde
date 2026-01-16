@@ -14,13 +14,13 @@ void nightModeVariables() {
 void buildingColours() {
   color black = 0; //Gray Scale, much smaller color, 256 bits
   color white = 255; //Gray Scale
-  color grayScale = 256/2; //Example Gray Scale, small memory
+  color grayScale = 359/1; //Example Gray Scale, small memory
   color gray = #9B9999; //Example Gray Scale, large memory
   //CANVAS: default background and ink
   resetBackgroundDay = white;
   resetInkDay = black;
-  resetBackgroundNight = 256/4;
-  resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
+  resetBackgroundNight = 359/1;
+  resetInkNight = int(359*0.75); // 3/4 of origoinal, not 1/4
   //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
   //Button Colours: layering local variables leads to preferences controled by Booleans
   color red = #CB255F;
